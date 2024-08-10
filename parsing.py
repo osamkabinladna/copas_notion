@@ -3,9 +3,12 @@ import re
 from utils import clean_latex, link2id
 from notion_client import Client as OfficialClient
 import os
+from dotenv import load_dotenv
 
+# Load env variables from ~/.zshrc (dont forget to source ~/.zshrc)
+load_dotenv()
 normalny_token = os.getenv('NOTION_KEY')
-
+print(normalny_token)
 
 def generate_block_id():
     return str(uuid.uuid4())
